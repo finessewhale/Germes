@@ -1,5 +1,57 @@
 @import "reset.css";
 @import "icons.css";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: Outfit;
+  background: #111111;
+}
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+[class*=__container] {
+  max-width: 1234px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+.header {
+  background: #000;
+}
+.header__container {
+  display: flex;
+  min-height: 120px;
+  align-items: center;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+}
+.logo__text {
+  padding: 38px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+.logo__text:hover {
+  opacity: 0.7;
+}
+.logo__text-pink span {
+  color: #FE18BE;
+}
 
 /*# sourceMappingURL=main.css.map */

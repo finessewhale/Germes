@@ -1,0 +1,12 @@
+{
+  "name": "germes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.54.9"
+  },
+  "scripts": {
+    "sass_watch": "sass --watch dev/sass/app.sass css/main.css"
+  }
+}

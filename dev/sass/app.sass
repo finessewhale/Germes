@@ -4,3 +4,45 @@
 
 $font-outfit: Outfit
 
+body
+    font-family: $font-outfit
+    background: #111111
+
+.wrapper
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    min-height: 100%
+
+.main
+    flex: 1 1 auto
+
+[class*=__container]
+    max-width: 1234px
+    margin: 0px auto
+    padding: 0px 15px
+
+.header
+    background: #000
+    &__container
+        display: flex
+        min-height: 120px
+        align-items: center
+    &__logo
+        display: flex
+        align-items: center
+
+.logo
+    text-decoration: none
+    &__text
+        padding: 38px
+        font-weight: 700
+        font-size: 18px
+        line-height: 23px
+        color: #fff
+        transition: all 0.2s linear
+        &:hover
+            opacity: 0.7
+        &-pink
+            span
+                color: #FE18BE

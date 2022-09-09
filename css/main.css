@@ -152,6 +152,7 @@ body {
 .translate__switch {
   text-decoration: none;
   color: #fff;
+  transition: all 0.2s linear;
 }
 .translate__switch:active {
   color: #FE18BE;

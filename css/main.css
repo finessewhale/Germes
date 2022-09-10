@@ -29,6 +29,11 @@ body {
 }
 
 .header {
+  z-index: 150;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
   background: #000;
 }
 .header__container {
@@ -46,8 +51,8 @@ body {
 .logo__text {
   padding: 38px;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 1.125rem;
+  line-height: 1.438rem;
   color: #fff;
   transition: all 0.2s linear;
 }
@@ -92,8 +97,8 @@ body {
   font-family: "Outfit";
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.2);
   -webkit-transition: all 0.2s linear;
@@ -114,7 +119,7 @@ body {
 .social__link {
   text-decoration: none;
   color: #FE18BE;
-  font-size: 22px;
+  font-size: 1.375rem;
   padding: 6px;
   -webkit-transition: transform 0.4s ease;
   transition: transform 0.4s ease;
@@ -145,8 +150,8 @@ body {
   font-family: "Outfit";
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 1.125rem;
+  line-height: 1.438rem;
   color: #fff;
 }
 .translate__switch {
@@ -159,6 +164,58 @@ body {
 }
 .translate__switch:hover {
   color: #FE18BE;
+}
+
+.intro {
+  min-height: 100vh;
+}
+.intro__container {
+  padding: 130px 15px 50px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.intro__flower {
+  padding-left: 80px;
+  margin-bottom: 20px;
+}
+.intro__flower img {
+  width: 100%;
+  height: 100%;
+}
+.intro__button {
+  text-decoration: none;
+  padding: 12px 52px;
+  border-radius: 20px;
+  background: #FE18BE;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.563rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  transition: all 0.4s ease;
+}
+.intro__button:hover {
+  background: #cd219d;
+}
+.intro__video {
+  width: 100vw;
+  height: 900px;
+  object-fit: cover;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.items {
+  background: #111111;
 }
 
 /*# sourceMappingURL=main.css.map */

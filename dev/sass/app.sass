@@ -27,6 +27,11 @@ body
     padding: 0px 15px
 
 .header
+    z-index: 150
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
     background: #000
     &__container
         display: flex
@@ -44,8 +49,8 @@ body
     &__text
         padding: 38px
         font-weight: 700
-        font-size: 18px
-        line-height: 23px
+        font-size: 1.125rem
+        line-height: 1.438rem
         color: #fff
         transition: all 0.2s linear
         &:hover
@@ -84,8 +89,8 @@ body
             font-family: 'Outfit'
             font-style: normal
             font-weight: 300
-            font-size: 14px
-            line-height: 18px
+            font-size: 0.875rem
+            line-height: 1.125rem
             letter-spacing: 0.05em
             color: rgba(255, 255, 255, 0.2)
             -webkit-transition: all .2s linear
@@ -102,7 +107,7 @@ body
     &__link
         text-decoration: none
         color: #FE18BE
-        font-size: 22px
+        font-size: 1.375rem
         padding: 6px
         -webkit-transition: transform .4s ease
         transition: transform .4s ease
@@ -131,8 +136,8 @@ body
     font-family: 'Outfit'
     font-style: normal
     font-weight: 700
-    font-size: 18px
-    line-height: 23px
+    font-size: 1.125rem
+    line-height: 1.438rem
     color: #fff
     &__switch
         text-decoration: none
@@ -142,3 +147,47 @@ body
             color: #FE18BE
         &:hover
             color: #FE18BE
+
+.intro
+    min-height: 100vh
+    &__container
+        padding: 130px 15px 50px 15px
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        align-items: center
+        position: relative
+    &__flower
+        padding-left: 80px
+        margin-bottom: 20px
+        img
+            width: 100%
+            height: 100%
+    &__button
+        text-decoration: none
+        padding: 12px 52px
+        border-radius: 20px
+        background: #FE18BE
+        font-family: 'Outfit'
+        font-style: normal
+        font-weight: 700
+        font-size: 1.25rem
+        line-height: 1.563rem
+        display: flex
+        align-items: center
+        letter-spacing: 0.1em
+        color: #FFFFFF
+        transition: all .4s ease
+        &:hover
+            background: #cd219d
+    &__video
+        width: 100vw
+        height: 900px
+        object-fit: cover
+        position: fixed
+        right: 0
+        top: 0
+        z-index: -1
+
+.items
+    background: #111111

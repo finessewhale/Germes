@@ -167,7 +167,7 @@ body {
 }
 
 .intro {
-  min-height: 100vh;
+  min-height: 800px;
 }
 .intro__container {
   padding: 130px 15px 50px 15px;
@@ -225,7 +225,7 @@ body {
 }
 .intro__video {
   width: 100vw;
-  height: 900px;
+  height: 800px;
   object-fit: cover;
   position: fixed;
   right: 0;
@@ -233,8 +233,225 @@ body {
   z-index: -1;
 }
 
-.items {
+.artworks {
+  color: #fff;
   background: #111111;
+  position: relative;
+  z-index: 1;
+}
+.artworks__container {
+  padding: 100px 15px 30px 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.artworks__title {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 5rem;
+  margin: 0 0 50px 0;
+}
+.artworks__subtitle {
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 10rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 140px;
+  left: -80px;
+}
+.artworks__cards {
+  display: flex;
+  margin: 0 0 60px 0;
+  align-items: stretch;
+}
+.artworks__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 324px;
+  margin: 0 auto;
+  max-width: 324px;
+  position: relative;
+  box-sizing: border-box;
+  color: #FFF;
+  background: #201F1F;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 20px;
+}
+.artworks__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  margin: -5px;
+  filter: blur(1px);
+  border-radius: inherit;
+  background: linear-gradient(100.28deg, #FF2CDF -7.63%, #0014FF 100%);
+}
+.artworks__card__rolling::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  margin: -5px;
+  border-radius: 20px;
+  background: linear-gradient(122.02deg, rgba(255, 44, 223, 0.6) 36.31%, rgba(0, 102, 255, 0.6) 111.8%);
+  filter: blur(1px);
+  transform-origin: right;
+  transform: translate(0px, 0px) rotate(0deg);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.artworks__card__rolling:hover::after {
+  opacity: 1;
+  transform: translate(50px, 20px) rotate(3.02deg);
+}
+.artworks__button {
+  display: flex;
+  justify-content: center;
+}
+
+.card__collection-cover img {
+  height: 338px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.card__collection-author-avatar {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 25%;
+  top: 238px;
+}
+.card__collection-author-avatar img {
+  height: 150px;
+  width: 150px;
+  border: 3px solid #201F1F;
+  border-radius: 50%;
+}
+.card__collection-author-name {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+}
+.card__collection-author-username {
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FE18BE;
+  text-decoration: none;
+  text-align: center;
+  overflow-wrap: anywhere;
+  padding: 5px 10px;
+}
+.card__collection-name {
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  padding: 0 10px;
+}
+.card__artwork-cover img {
+  height: 338px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.card__artwork-author-avatar {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 25%;
+  top: 238px;
+}
+.card__artwork-author-avatar img {
+  height: 150px;
+  width: 150px;
+  border: 3px solid #201F1F;
+  border-radius: 50%;
+}
+.card__artwork-author-name {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+}
+.card__artwork-author-username {
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FE18BE;
+  text-decoration: none;
+  text-align: center;
+  overflow-wrap: anywhere;
+  padding: 5px 10px;
+}
+.card__artwork-name {
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  padding: 0 10px;
+}
+.card__button {
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.2s linear;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+.button__outline {
+  border: 1px solid #FE18BE;
+  border-radius: 10px;
+  background: transparent;
+  padding: 9px 45px;
+  box-shadow: 0 0 1px 0 #FE18BE inset, 0 0 1px 0 #FE18BE;
+}
+.button__outline:hover {
+  background: #FE18BE;
 }
 
 /*# sourceMappingURL=main.css.map */

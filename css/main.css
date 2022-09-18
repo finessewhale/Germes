@@ -30,7 +30,7 @@ body {
 
 .header {
   z-index: 150;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -167,19 +167,17 @@ body {
 }
 
 .intro {
-  min-height: 800px;
+  min-height: 100vh;
+  display: flex;
 }
 .intro__container {
-  padding: 130px 15px 50px 15px;
+  padding: 50px 15px 20px 15px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: relative;
-}
-.intro__flower {
-  padding-left: 80px;
-  margin-bottom: 20px;
 }
 .intro__flower img {
   width: 100%;
@@ -225,9 +223,9 @@ body {
 }
 .intro__video {
   width: 100vw;
-  height: 800px;
+  height: 100vh;
   object-fit: cover;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   z-index: -1;
@@ -295,30 +293,33 @@ body {
   border-radius: inherit;
   background: linear-gradient(100.28deg, #FF2CDF -7.63%, #0014FF 100%);
 }
-.artworks__card__rolling::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -2;
-  margin: -5px;
-  border-radius: 20px;
-  background: linear-gradient(122.02deg, rgba(255, 44, 223, 0.6) 36.31%, rgba(0, 102, 255, 0.6) 111.8%);
-  filter: blur(1px);
-  transform-origin: right;
-  transform: translate(0px, 0px) rotate(0deg);
-  opacity: 0;
-  transition: all 0.2s linear;
-}
-.artworks__card__rolling:hover::after {
-  opacity: 1;
-  transform: translate(50px, 20px) rotate(3.02deg);
-}
 .artworks__button {
   display: flex;
   justify-content: center;
+}
+.artworks__decor-1 {
+  position: absolute;
+  background: rgba(254, 24, 190, 0.2);
+  filter: blur(200px);
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  top: 200px;
+  right: 0;
+  z-index: -4;
+  transform: translate3d(0, 0, 0);
+}
+.artworks__decor-2 {
+  position: absolute;
+  background: rgba(24, 171, 254, 0.2);
+  filter: blur(200px);
+  border-radius: 50%;
+  width: 682px;
+  height: 719px;
+  top: 0;
+  left: 0;
+  z-index: -4;
+  transform: translate3d(0, 0, 0);
 }
 
 .card__collection-cover img {
@@ -374,28 +375,37 @@ body {
   text-align: center;
   padding: 0 10px;
 }
+.card__artwork-info {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .card__artwork-cover img {
   height: 338px;
   width: 100%;
   border-radius: 15px 15px 0 0;
 }
+.card__artwork-author {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+.card__artwork-author-info {
+  display: flex;
+  flex-direction: column;
+}
 .card__artwork-author-avatar {
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 25%;
-  top: 238px;
+  margin: 0 5px 0 0;
 }
 .card__artwork-author-avatar img {
-  height: 150px;
-  width: 150px;
-  border: 3px solid #201F1F;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 .card__artwork-author-name {
-  margin: 50px 0 0 0;
-  display: flex;
-  justify-content: center;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 500;
@@ -403,8 +413,6 @@ body {
   line-height: 25px;
 }
 .card__artwork-author-username {
-  display: flex;
-  justify-content: center;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 500;
@@ -412,25 +420,153 @@ body {
   line-height: 18px;
   color: #FE18BE;
   text-decoration: none;
-  text-align: center;
   overflow-wrap: anywhere;
-  padding: 5px 10px;
 }
 .card__artwork-name {
-  display: flex;
-  justify-content: center;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 25px;
+  margin: 15px 0;
+}
+.card__artwork-buy-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__artwork-price {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
   text-align: center;
-  padding: 0 10px;
+}
+.card__artwork-price span {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #555555;
 }
 .card__button {
   margin: 16px 0;
   display: flex;
   justify-content: center;
+}
+
+.collections {
+  color: #fff;
+  background: #111111;
+  position: relative;
+  z-index: 1;
+}
+.collections__container {
+  padding: 100px 15px 30px 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.collections__title {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 5rem;
+  margin: 0 0 50px 0;
+}
+.collections__subtitle {
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 10rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 140px;
+  left: -80px;
+}
+.collections__cards {
+  display: flex;
+  margin: 0 0 60px 0;
+  align-items: stretch;
+}
+.collections__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 324px;
+  margin: 0 auto;
+  max-width: 324px;
+  position: relative;
+  box-sizing: border-box;
+  color: #FFF;
+  background: #201F1F;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 20px;
+}
+.collections__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -2;
+  margin: -5px;
+  filter: blur(1px);
+  border-radius: inherit;
+  background: linear-gradient(100.28deg, #FF2CDF -7.63%, #0014FF 100%);
+}
+.collections__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -3;
+  margin: -5px;
+  border-radius: 20px;
+  background: linear-gradient(122.02deg, rgba(255, 44, 223, 0.6) 36.31%, rgba(0, 102, 255, 0.6) 111.8%);
+  filter: blur(1px);
+  transform-origin: right;
+  transform: translate(0px, 0px) rotate(0deg);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.collections__card:hover::after {
+  opacity: 1;
+  transform: translate(50px, 20px) rotate(3.02deg);
+}
+.collections__button {
+  display: flex;
+  justify-content: center;
+}
+.collections__decor-1 {
+  position: absolute;
+  background: rgba(254, 24, 190, 0.2);
+  filter: blur(200px);
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  top: 150px;
+  left: 0;
+  z-index: -4;
+  transform: translate3d(0, 0, 0);
+}
+.collections__decor-2 {
+  position: absolute;
+  background: rgba(24, 171, 254, 0.2);
+  filter: blur(200px);
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  top: 300px;
+  right: 0;
+  z-index: -4;
+  transform: translate3d(0, 0, 0);
 }
 
 .button {

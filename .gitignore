@@ -2,3 +2,4 @@ node_modules/
 *.map
 css/main.css.map
 .DS_Store
+/videos

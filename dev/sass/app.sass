@@ -208,7 +208,6 @@ body
 
 .artworks
     color: #fff
-    background: #111111
     position: relative
     z-index: 1
     &__container
@@ -410,7 +409,6 @@ body
 
 .collections
     color: #fff
-    background: #111111
     position: relative
     z-index: 1
     &__container
@@ -528,3 +526,67 @@ body
         box-shadow: 0 0 1px 0 #FE18BE inset, 0 0 1px 0 #FE18BE
         &:hover
             background: #FE18BE
+
+.about
+    color: #fff
+    position: relative
+    z-index: 1
+    &__container
+        padding: 100px 15px 30px 15px
+        position: relative
+        display: flex
+        justify-content: center
+        flex-direction: column
+    &__title
+        font-weight: 700
+        font-size: 4rem
+        line-height: 5rem
+        margin: 0 0 50px 0
+    &__subtitle
+        font-weight: 700
+        font-size: 8rem
+        line-height: 10rem
+        text-transform: uppercase
+        color: rgba(255, 255, 255, 0.1)
+        position: absolute
+        top: 140px
+        left: -80px
+    &__card
+        background: #121618
+        border-radius: 20px
+        padding: 84px
+        position: relative
+        box-sizing: border-box
+        $border: 5px
+        background-clip: padding-box
+        border: solid $border transparent
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            z-index: -1
+            margin: -$border
+            filter: blur(1px)
+            border-radius: inherit
+            background: linear-gradient(100.28deg, #FF2CDF -7.63%, #0014FF 100%)
+        &-avatars
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 52px
+        &-avatar
+            background: gray
+            height: 150px
+            width: 150px
+            border-radius: 20px
+        &-text
+            font-family: 'Outfit'
+            font-style: normal
+            font-weight: 500
+            font-size: 24px
+            line-height: 30px
+            p
+                margin: 20px 0

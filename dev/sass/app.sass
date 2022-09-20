@@ -173,8 +173,6 @@ body
         font-weight: 700
         font-size: 1.25rem
         line-height: 1.563rem
-        display: flex
-        align-items: center
         letter-spacing: 0.1em
         color: #FFFFFF
         transition: all .4s ease
@@ -804,6 +802,86 @@ body
             margin-left: auto
             font-size: 60px
             line-height: 50px
+
+.banner
+    &__container
+        padding: 150px 15px 30px 15px
+        position: relative
+        display: flex
+        justify-content: center
+        flex-direction: column
+    &__content
+        background: url(../img/banner-bg.png) no-repeat
+        background-size: cover
+        border-radius: 30px
+        display: flex
+        align-items: center
+        padding: 50px 60px 50px 60px
+        position: relative
+    &__text
+        flex: 1 0 60%
+        max-width: 530px
+        color: #fff
+    &__title
+        font-family: 'Outfit'
+        font-style: normal
+        font-weight: 700
+        font-size: 64px
+        line-height: 81px
+    &__subtitle
+        font-family: 'Outfit'
+        font-style: normal
+        font-weight: 500
+        font-size: 20px
+        line-height: 25px
+        margin-bottom: 26px
+    &__input
+        display: flex
+        color: #fff
+        background: rgba(255, 255, 255, 0.2)
+        border-radius: 5px
+        max-width: 264px
+        input
+            color: inherit
+            font-family: 'Outfit'
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 18px
+            letter-spacing: 0.1em
+            border: none
+            background: transparent
+            outline: none
+            padding: 2px 10px
+            &::placeholder
+                color: inherit
+                font-family: 'Outfit'
+                font-style: normal
+                font-weight: 500
+                font-size: 16px
+                line-height: 18px
+                letter-spacing: 0.1em
+        button
+            border: none
+            padding: 5px 22px
+            color: inherit
+            background: #FE18BE
+            border-radius: 5px
+            font-family: 'Outfit'
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 18px
+            letter-spacing: 0.1em
+            transition: all .2s ease
+            cursor: pointer
+            &:hover
+                background: #cd219d
+    &__image
+        flex: 1 0 40%
+        position: absolute
+        right: 60px
+        bottom: 0px
 
 .text
     &-crossed

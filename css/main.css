@@ -455,7 +455,7 @@ body {
 .collections {
   color: #fff;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 .collections__container {
   padding: 100px 15px 30px 15px;
@@ -585,7 +585,7 @@ body {
 .about {
   color: #fff;
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 .about__container {
   padding: 100px 15px 30px 15px;
@@ -990,7 +990,7 @@ body {
   z-index: 1;
 }
 .partners__container {
-  padding: 100px 15px 30px 15px;
+  padding: 100px 15px 300px 15px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -1084,6 +1084,36 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
+.footer {
+  width: 100%;
+  background: #000;
+  position: relative;
+}
+.footer__waves {
+  z-index: -5;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  min-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+}
+.footer__container {
+  z-index: 100;
+  display: flex;
+  min-height: 120px;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+}
+.footer__copyright {
+  color: #fff;
+}
 .text-crossed {
   text-decoration-line: line-through;
 }

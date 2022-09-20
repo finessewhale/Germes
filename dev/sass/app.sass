@@ -408,7 +408,7 @@ body
 .collections
     color: #fff
     position: relative
-    z-index: 1
+    z-index: 10
     &__container
         padding: 100px 15px 30px 15px
         position: relative
@@ -528,7 +528,7 @@ body
 .about
     color: #fff
     position: relative
-    z-index: 1
+    z-index: 4
     &__container
         padding: 100px 15px 30px 15px
         position: relative
@@ -888,7 +888,7 @@ body
     position: relative
     z-index: 1
     &__container
-        padding: 100px 15px 30px 15px
+        padding: 100px 15px 300px 15px
         position: relative
         display: flex
         justify-content: center
@@ -973,6 +973,34 @@ body
             right: 0
             z-index: -4
             transform: translate3d(0, 0, 0)
+
+.footer
+    width: 100%
+    background: #000
+    position: relative
+    &__waves
+        z-index: -5
+        right: 0
+        left: 0
+        bottom: 100%
+        min-width: 100%
+        height: auto
+        display: block
+        margin: 0 auto
+        position: absolute
+    &__container
+        z-index: 100
+        display: flex
+        min-height: 120px
+        align-items: center
+        justify-content: space-between
+    &__logo
+        display: flex
+        align-items: center
+    &__copyright
+        color: #fff
+    &__socials
+
 .text
     &-crossed
         text-decoration-line: line-through

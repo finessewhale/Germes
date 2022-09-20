@@ -644,10 +644,17 @@ body {
   margin-bottom: 52px;
 }
 .about__card-avatar {
-  background: gray;
-  height: 150px;
-  width: 150px;
+  transition: all 0.3s ease 0s;
+}
+.about__card-avatar img {
+  height: 100%;
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
   border-radius: 20px;
+}
+.about__card-avatar:hover {
+  transform: scale(1.4);
 }
 .about__card-text {
   font-family: "Outfit";

@@ -578,10 +578,15 @@ body
             align-items: center
             margin-bottom: 52px
         &-avatar
-            background: gray
-            height: 150px
-            width: 150px
-            border-radius: 20px
+            transition: all .3s ease 0s
+            img
+                height: 100%
+                width: 100%
+                max-width: 150px
+                max-height: 150px
+                border-radius: 20px
+            &:hover
+                transform: scale(1.4)
         &-text
             font-family: 'Outfit'
             font-style: normal

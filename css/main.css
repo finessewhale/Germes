@@ -773,4 +773,138 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
+.roadmap {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.roadmap__container {
+  padding: 100px 15px 30px 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.roadmap__title {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 5rem;
+  margin: 0 0 50px 0;
+}
+.roadmap__subtitle {
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 10rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 140px;
+  left: -80px;
+}
+.roadmap__card {
+  background: #121618;
+  border-radius: 20px;
+  padding: 42px 84px;
+  position: relative;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+}
+.roadmap__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -5px;
+  filter: blur(1px);
+  border-radius: inherit;
+  background: linear-gradient(100.28deg, #FF2CDF -7.63%, #0014FF 100%);
+}
+.roadmap__card-text {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+.roadmap__card-text p {
+  margin: 20px 0;
+}
+.roadmap__decor-1 {
+  position: absolute;
+  background: #192153;
+  filter: blur(200px);
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  top: 150px;
+  left: 0;
+  z-index: -4;
+  transform: translate3d(0, 0, 0);
+}
+.roadmap__decor-2 {
+  position: absolute;
+  background: rgba(254, 24, 190, 0.2);
+  filter: blur(200px);
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  top: 500px;
+  right: 0;
+  z-index: -4;
+  transform: translate3d(0, 0, 0);
+}
+.roadmap__items {
+  display: flex;
+  flex-direction: column;
+}
+.roadmap__item {
+  display: flex;
+  margin: 0 0 20px 0;
+}
+.roadmap__item-number {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #FE18BE;
+  margin-right: 38px;
+}
+.roadmap__item-text {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  margin-right: 38px;
+}
+.roadmap__item-text p {
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  text-decoration-line: inherit;
+}
+.roadmap__item-mark {
+  margin-left: auto;
+  font-size: 60px;
+  line-height: 50px;
+}
+
+.text-crossed {
+  text-decoration-line: line-through;
+}
+
+.mark-inactive {
+  color: #35393A;
+}
+.mark-active {
+  color: #FE18BE;
+}
+
 /*# sourceMappingURL=main.css.map */

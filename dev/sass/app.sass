@@ -1,3 +1,4 @@
+@use "variables/variables"
 @import reset.css
 @import icons.css
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap')
@@ -8,12 +9,17 @@ $font-outfit: Outfit
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
 
+html,
+body
+    height: 100%
+    line-height: 1
+
 body
     font-family: $font-outfit
-    background: #111111
+    background: variables.$bg-primary
 
 .wrapper
-    //overflow: hidden
+    overflow: hidden
     display: flex
     flex-direction: column
     min-height: 100%
@@ -26,26 +32,42 @@ body
     margin: 0px auto
     padding: 0px 15px
 
+@media (max-width: 1057px)
+    [class*=__container]
+        max-width: 970px
+
+@media (max-width: 992px)
+    [class*=__container]
+        max-width: 750px
+
+@media (max-width: 767.98px)
+    [class*=__container]
+        max-width: none
+
 .header
     z-index: 150
     position: fixed
     width: 100%
     top: 0
     left: 0
-    background: #000
+    background: variables.$bg-black
     &__container
         display: flex
         min-height: 120px
         align-items: center
+        justify-content: center
     &__logo
-        display: flex
-        align-items: center
+        position: relative
+        z-index: 5
     &__search
     &__socials
     &__translate
 
 .logo
     text-decoration: none
+    transition: all 0.2s linear
+    &:hover
+        opacity: 0.7
     &__text
         padding: 38px
         font-weight: 700
@@ -62,14 +84,16 @@ body
 .search
     margin: 0 auto
     border-radius: 20px
-    background: #202020
+    background: variables.$bg-secondary
     padding: 8px 25px
     -webkit-transition: all .2s linear
     transition: all .2s linear
+    display: flex
+    border: 1px solid variables.$bg-secondary
     a
         padding: 0 2px
         text-decoration: none
-        color: #FE18BE
+        color: variables.$text-primary
         opacity: 0.6
         -webkit-transition: all .2s linear
         transition: all .2s linear
@@ -103,14 +127,16 @@ body
 
 .social
     display: flex
-    margin: 0 20px 0 0
     &__link
+        display: flex
         text-decoration: none
         color: #FE18BE
         font-size: 1.375rem
         padding: 6px
         -webkit-transition: transform .4s ease
         transition: transform .4s ease
+        &-label
+            display: none
         span
             &::before
                 display: flex
@@ -133,6 +159,7 @@ body
                     background: #FE18BE
 
 .translate
+    display: flex
     font-family: 'Outfit'
     font-style: normal
     font-weight: 700
@@ -147,6 +174,9 @@ body
             color: #FE18BE
         &:hover
             color: #FE18BE
+
+.icon-menu
+    display: none
 
 .intro
     min-height: 100vh
@@ -577,9 +607,24 @@ body
             margin-bottom: 52px
         &-avatar
             transition: all .3s ease 0s
+            h1,h2,h3,h4
+                text-align: center
+                margin: 10px 0
+            h1
+                font-size: 1.5rem
+                color: #FF2CDF
+            h2
+                font-size: 1.5rem
+                color: #FF2CDF
+            h4
+                font-size: 1.5rem
+                color: #FF2CDF
             img
+                object-fit: cover
                 height: 100%
                 width: 100%
+                min-width: 150px
+                min-height: 150px
                 max-width: 150px
                 max-height: 150px
                 border-radius: 20px
@@ -802,6 +847,18 @@ body
             margin-left: auto
             font-size: 60px
             line-height: 50px
+            position: relative
+            z-index: 2
+            &::before
+                content: ''
+                top: -2px
+                left: -2px
+                width: 64px
+                height: 64px
+                background: linear-gradient(100.28deg, #FF2CDF -7.63%, #0014FF 100%)
+                z-index: -1
+                position: absolute
+                border-radius: 50%
 
 .banner
     &__container
@@ -920,7 +977,7 @@ body
         $border: 5px
         background-clip: padding-box
         border: solid $border transparent
-        min-width: 324px
+        min-width: 100%
         min-height: 314px
         &::before
             content: ''
@@ -937,7 +994,9 @@ body
         &-logo
             display: flex
             justify-content: center
-            margin-bottom: 62px
+            img
+                height: 200px
+                width: 200px
         &-name
             display: flex
             justify-content: center
@@ -976,7 +1035,7 @@ body
 
 .footer
     width: 100%
-    background: #000
+    background: variables.$bg-black
     position: relative
     &__waves
         z-index: -5
@@ -998,7 +1057,7 @@ body
         display: flex
         align-items: center
     &__copyright
-        color: #fff
+        color: variables.$text-white
     &__socials
 
 .text
@@ -1010,3 +1069,233 @@ body
         color: #35393A
     &-active
         color: #FE18BE
+.menu
+    display: flex
+    &__list
+        display: flex
+        align-items: center
+
+    &__item
+        margin: 0 30px
+
+    &__link
+        text-transform: uppercase
+        font-weight: 700
+        font-size: 10px
+        line-height: 1.2
+        color: #000
+        text-decoration: none
+        letter-spacing: 1px
+        transition: all 0.2s ease 0s
+        &:hover
+            opacity: 0.5
+
+@media (max-width: 1057px)
+    .search
+        &__field
+            min-width: 190px
+
+@media (max-width: 479.98px)
+    .header__logo
+        flex: 0 0 80px
+        overflow: hidden
+    .header__container
+        min-height: 80px
+
+@media (max-width: 991.98px)
+    .icon-menu
+        position: relative
+        flex: 0 0 30px
+        height: 18px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        margin: 0px 0px 0px 20px
+        &::after, &::before
+            content: ""
+            background: #FE18BE
+            height: 2px
+        span
+            height: 2px
+            background: #FE18BE
+    .header__socials
+        margin: 0
+        flex-direction: column
+    .social
+        &__link
+            align-items: center
+            position: relative
+            margin: 15px 0
+            &::after
+                content: ''
+                position: absolute
+                width: 100%
+                height: 1px
+                bottom: -15px
+                left: 0
+                background: rgba(255,255,255, 0.2)
+            &:last-child
+                &::after
+                    display: none
+            &-label
+                color: #FE18BE
+                margin: 0 20px
+                display: flex
+    .footer__container
+        flex-direction: column
+
+@media (max-width: 1057px)
+    .header__container
+        min-height: 100px
+    .socials
+        margin: 0
+@media (min-width: 991.98px ) and (max-width: 1199.98px)
+    .menu__item
+        margin: 0 10px
+        &:first-child
+            margin: 0 0 0 30px
+        &:last-child
+            margin: 0
+
+@media (max-width: 991.98px)
+    .header__container
+        justify-content: space-between
+    .menu__body
+        position: fixed
+        top: 0
+        left: -100%
+        width: 100%
+        height: 100%
+        background-color: #000
+        padding: 110px 15px 30px 15px
+        transition: all 0.3s ease 0s
+        &:target
+            left: 0
+    .menu__list
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+    .menu__item
+        margin: 0 0 25px 0
+        &:last-child
+            margin: 0
+    .menu__link
+        color: #000
+        font-size: 28px
+        &:hover
+            text-decoration: underline
+
+@media (max-width: 1057px)
+    .about__card-avatars
+        flex-wrap: wrap
+        justify-content: center
+        margin: 10px 0
+    .about__card-avatar
+        margin: 10px 20px
+
+@media (max-width: 991.98px)
+    .artworks__cards
+        justify-content: center
+        flex-wrap: wrap
+    .artworks__card
+        margin: 20px 15px
+    .artworks__title
+        font-size: 3rem
+        margin: 0 0 20px 0
+    .artworks__subtitle
+        font-size: 5rem
+        left: 10px
+        top: 120px
+
+    .collections__cards
+        justify-content: center
+        flex-wrap: wrap
+    .collections__card
+        margin: 20px 15px
+    .collections__title
+        font-size: 3rem
+        margin: 0 0 20px 0
+    .collections__subtitle
+        font-size: 5rem
+        left: 10px
+        top: 120px
+
+    .about__title
+        font-size: 3rem
+        margin: 0 0 40px 0
+    .about__subtitle
+        font-size: 5rem
+        left: 10px
+        top: 120px
+    .about__card
+        padding: 42px 40px
+        display: flex
+    .about__card-avatars
+        flex-wrap: wrap
+        justify-content: center
+        margin: 10px
+    .about__card-avatar
+        margin: 10px 20px
+        img
+            object-fit: cover
+            min-height: 150px
+            min-width: 150px
+    .about__card-text
+        font-size: 1.25rem
+
+    .whitelist__title
+        font-size: 3rem
+        margin: 0 0 40px 0
+    .whitelist__subtitle
+        font-size: 5rem
+        left: 10px
+        top: 120px
+    .whitelist__card
+        padding: 42px 40px
+    .whitelist__card-text
+        font-size: 1.25rem
+
+    .roadmap__title
+        font-size: 3rem
+        margin: 0 0 40px 0
+    .roadmap__subtitle
+        font-size: 5rem
+        left: 10px
+        top: 120px
+    .roadmap__card
+        padding: 42px 40px
+    .roadmap__item-number
+        font-size: 2rem
+        margin-right: 15px
+    .roadmap__item-text
+        font-size: 1.5rem
+        margin-right: 15px
+        p
+            font-size: 1.25rem
+    .roadmap__item-mark
+        font-size: 2rem
+
+    .partners__title
+        font-size: 3rem
+        margin: 0 0 40px 0
+    .partners__subtitle
+        font-size: 5rem
+        left: 10px
+        top: 120px
+    .partners__card
+        margin: 15px
+    .partners__card-name
+        font-size: 1.5rem
+    .banner
+        display: none
+
+@media (max-width: 767.98px)
+    .about__card
+        display: block
+
+@media (max-width: 519.98px)
+    .about__card-avatar img
+        min-width: 80px
+        min-height: 80px
+        max-height: 80px
+        max-width: 80px
